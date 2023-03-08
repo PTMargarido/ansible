@@ -27,19 +27,6 @@
     - arch-install
 
 # OS common tasks
-- name: Cloning nvim personal config
-  ansible.builtin.git:
-    repo: 'git@github.com:PTMargarido/nvim.git'
-    dest: "{{ lookup('env', 'HOME') }}/.config/nvim/"
-    key_file: "{{ lookup('env', 'HOME') }}/.ssh/github"
-    recursive: yes
-    update: yes
-    accept_hostkey: yes
-    version: main
-  tags:
-    - ubuntu-install
-    - arch-install
-
 - name: Get Packer
   ansible.builtin.git:
     repo: 'https://github.com/wbthomason/packer.nvim'
@@ -47,10 +34,3 @@
   tags:
     - arch-install
     - ubuntu-install
-    
-    
-- name: Running PackerSync 
-  shell: "nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
-  tags:
-    - ubuntu-install
-    - arch-install

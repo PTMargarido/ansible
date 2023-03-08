@@ -6,9 +6,11 @@
            "cmake", 
            "pkg-config", 
            "curl", 
+           "fzf", 
            "git", 
            "lua5.1", 
            "unzip", 
+           "stow", 
            "libtool", 
            "libtool-bin", 
            "gettext"]
@@ -17,7 +19,14 @@
 
 # Arch - system packages
 - name: Install Arch system packages
-  shell: "pacman -Sy --needed openssh git base-devel cmake --noconfirm"
+  shell: "pacman -Sy --needed \ 
+          openssh \
+          git \
+          base-devel \
+          cmake \ 
+          stow \
+          fzf \
+          --noconfirm"
   tags:
     - arch-install
 

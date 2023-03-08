@@ -1,0 +1,6 @@
+# dot files must be present already    
+- name: Running PackerSync 
+  shell: "nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
+  tags:
+    - ubuntu-install
+    - arch-install

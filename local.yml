@@ -19,4 +19,6 @@
     - include: tasks/ssh.yml
     - include: tasks/core-setup.yml
     - include: tasks/git-setup.yml
+    - include: tasks/dotfiles.yml
     - include: tasks/nvim.yml
+    - include: tasks/finalize.yml
