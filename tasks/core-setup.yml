@@ -1,0 +1,37 @@
+# Ubuntu system packages
+- name: Install Ubuntu system packages
+  become: true
+  apt:
+    name: ["build-essential", 
+           "cmake", 
+           "pkg-config", 
+           "curl", 
+           "git", 
+           "lua5.1", 
+           "unzip", 
+           "libtool", 
+           "libtool-bin", 
+           "gettext"]
+  tags:
+    - ubuntu-install
+
+# Arch - system packages
+- name: Install Arch system packages
+  shell: "pacman -Sy --needed openssh git base-devel cmake --noconfirm"
+  tags:
+    - arch-install
+
+# Arch - Install yay
+- name: Install yay
+  ansible.builtin.git:
+    repo: 'https://aur.archlinux.org/yay.git'
+    dest: "{{ lookup('env', 'HOME') }}/.yay"
+  tags:
+    - arch-install
+
+- name: Installing yay
+  shell: |
+    cd {{ lookup('env', 'HOME') }}/.yay && makepkg -si --noconfirm
+  tags:
+    - arch-install
+  ignore_errors: yes

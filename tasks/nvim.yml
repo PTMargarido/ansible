@@ -1,0 +1,56 @@
+- name: Remove neovim
+  shell: rm -rf ~/neovim
+  tags:
+    - ubuntu-install
+    
+- name: Clone Neovim
+  ansible.builtin.git:
+    repo: 'https://github.com/neovim/neovim.git'
+    dest: "{{ lookup('env', 'HOME') }}/neovim"
+  tags:
+    - ubuntu-install
+    
+- name: Build neovim
+  shell: "cd {{ lookup('env', 'HOME') }}/neovim && make -j 20"
+  tags:
+    - ubuntu-install
+    
+- name: Install neovim
+  become: true
+  shell: "cd {{ lookup('env', 'HOME') }}/neovim && make install"
+  tags:
+    - ubuntu-install
+    
+- name: Installing neovim
+  shell: "pacman -Sy neovim --noconfirm"
+  tags:
+    - arch-install
+
+# OS common tasks
+- name: Cloning nvim personal config
+  ansible.builtin.git:
+    repo: 'git@github.com:PTMargarido/nvim.git'
+    dest: "{{ lookup('env', 'HOME') }}/.config/nvim/"
+    key_file: "{{ lookup('env', 'HOME') }}/.ssh/github"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    version: main
+  tags:
+    - ubuntu-install
+    - arch-install
+
+- name: Get Packer
+  ansible.builtin.git:
+    repo: 'https://github.com/wbthomason/packer.nvim'
+    dest: "{{ lookup('env', 'HOME') }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  tags:
+    - arch-install
+    - ubuntu-install
+    
+    
+- name: Running PackerSync 
+  shell: "nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'"
+  tags:
+    - ubuntu-install
+    - arch-install
