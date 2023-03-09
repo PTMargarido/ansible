@@ -27,7 +27,7 @@
           stow \
           fzf \
           alacritty \
-          noto-fonts \
+          ttf-fira-code \
           --noconfirm"
   tags:
     - arch-install
