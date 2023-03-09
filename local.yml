@@ -12,7 +12,7 @@
     tags:
       - ubuntu-install
   - name: Update Pacman
-    shell: pacman -Syu --noconfirm
+    shell: sudo sudo pacman -Syu --noconfirm
     tags:
       - arch-install
   tasks:

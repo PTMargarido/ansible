@@ -19,13 +19,14 @@
 
 # Arch - system packages
 - name: Install Arch system packages
-  shell: "pacman -Sy --needed \ 
+  shell: "sudo pacman -Sy --needed \ 
           openssh \
           git \
           base-devel \
           cmake \ 
           stow \
           fzf \
+          noto-fonts \
           --noconfirm"
   tags:
     - arch-install

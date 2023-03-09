@@ -22,7 +22,7 @@
     - ubuntu-install
     
 - name: Installing neovim
-  shell: "pacman -Sy neovim --noconfirm"
+  shell: "sudo sudo pacman -Sy neovim --noconfirm"
   tags:
     - arch-install
 
