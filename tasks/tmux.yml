@@ -1,0 +1,12 @@
+- name: Cloning tmux plugin manager
+  ansible.builtin.git:
+    repo: 'https://github.com/tmux-plugins/tpm'
+    dest: "{{ lookup('env', 'HOME') }}/.tmux/plugins/tpm"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    key_file: "{{ lookup('env', 'HOME') }}/.ssh/github"
+    version: master
+  tags:
+    - arch-install
+    - ubuntu-install

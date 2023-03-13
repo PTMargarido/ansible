@@ -21,5 +21,6 @@
     - include: tasks/git-setup.yml
     - include: tasks/nvim.yml
     - include: tasks/repos.yml
+    - include: tasks/tmux.yml
     - include: tasks/dotfiles.yml
     - include: tasks/finalize.yml
