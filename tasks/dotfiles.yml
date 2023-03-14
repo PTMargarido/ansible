@@ -1,3 +1,5 @@
+- name: Remove .dotfiles
+  shell: rm -rf $HOME/.dotfiles
 - name: Cloning .dotfiles
   ansible.builtin.git:
     repo: 'git@github.com:PTMargarido/.dotfiles.git'
