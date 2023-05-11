@@ -28,6 +28,8 @@
           fzf \
           alacritty \
           ttf-fira-code \
+          ripgrep \
+          fd \
           --noconfirm"
   tags:
     - arch-install
