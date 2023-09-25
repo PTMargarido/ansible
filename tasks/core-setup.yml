@@ -30,6 +30,7 @@
           ttf-fira-code \
           ripgrep \
           fd \
+          ttf-firacode-nerd \
           --noconfirm"
   tags:
     - arch-install
