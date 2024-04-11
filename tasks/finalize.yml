@@ -1,6 +1,6 @@
 # dot files must be present already    
 - name: Running Lazy 
-  shell: "nvim --headless -c 'Lazy'"
+  shell: "nvim --headless '+Lazy! sync' +qa"
   tags:
     - ubuntu-install
     - arch-install
