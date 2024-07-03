@@ -19,6 +19,7 @@
     - import_tasks: tasks/ssh.yml
     - import_tasks: tasks/core-setup.yml
     - import_tasks: tasks/git-setup.yml
+    - import_tasks: tasks/zsh.yml
     - import_tasks: tasks/nvim.yml
     - import_tasks: tasks/repos.yml
     - import_tasks: tasks/tmux.yml
