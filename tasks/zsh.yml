@@ -1,6 +1,6 @@
 - name: Installing oh-my-zsh
   shell: |
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
   tags:
     - arch-install
   ignore_errors: yes
@@ -8,49 +8,49 @@
 - name: Install zsh-autosuggestions
   ansible.builtin.git:
     repo: 'https://github.com/zsh-users/zsh-autosuggestions'
-    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
   tags:
     - arch-install
 
 - name: Install zsh-completions
   ansible.builtin.git:
     repo: 'git clone https://github.com/zsh-users/zsh-completions.git'
-    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom}/plugins/zsh-completions"
+    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/plugins/zsh-completions"
   tags:
     - arch-install
 
 - name: Install zsh-syntax-highlighting
   ansible.builtin.git:
     repo: 'git clone https://github.com/zsh-users/zsh-syntax-highlighting.git'
-    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
   tags:
     - arch-install
 
 - name: Install zsh-syntax-highlighting catppuccin
   ansible.builtin.git:
     repo: 'https://github.com/catppuccin/zsh-syntax-highlighting/'
-    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom}/themes/zsh-syntax-highlighting"
+    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/themes/zsh-syntax-highlighting"
   tags:
     - arch-install
 
 - name: Install autoupdate zsh plugins
   ansible.builtin.git:
     repo: 'https://github.com/TamCore/autoupdate-oh-my-zsh-plugins'
-    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom}/plugins/autoupdate"
+    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/plugins/autoupdate"
   tags:
     - arch-install
 
 - name: Install zsh ls
   ansible.builtin.git:
     repo: 'https://github.com/zpm-zsh/ls.git'
-    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom}/plugins/ls"
+    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/plugins/ls"
   tags:
     - arch-install
 
 - name: Install zsh vi mode
   ansible.builtin.git:
     repo: 'https://github.com/jeffreytse/zsh-vi-mode'
-    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom}/plugins/zsh-vi-mode"
+    dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/plugins/zsh-vi-mode"
   tags:
     - arch-install
 
