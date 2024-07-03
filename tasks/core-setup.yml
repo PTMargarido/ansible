@@ -27,6 +27,8 @@
           stow \
           fzf \
           alacritty \
+          zsh \
+          starship \
           ttf-fira-code \
           ripgrep \
           fd \
