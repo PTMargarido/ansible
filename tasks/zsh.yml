@@ -14,14 +14,14 @@
 
 - name: Install zsh-completions
   ansible.builtin.git:
-    repo: 'git clone https://github.com/zsh-users/zsh-completions.git'
+    repo: 'https://github.com/zsh-users/zsh-completions.git'
     dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/plugins/zsh-completions"
   tags:
     - arch-install
 
 - name: Install zsh-syntax-highlighting
   ansible.builtin.git:
-    repo: 'git clone https://github.com/zsh-users/zsh-syntax-highlighting.git'
+    repo: 'https://github.com/zsh-users/zsh-syntax-highlighting.git'
     dest: "{{ lookup('env', 'HOME') }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
   tags:
     - arch-install
