@@ -25,12 +25,3 @@
   shell: "sudo sudo pacman -Sy neovim --noconfirm"
   tags:
     - arch-install
-
-# OS common tasks
-- name: Get Packer
-  ansible.builtin.git:
-    repo: 'https://github.com/wbthomason/packer.nvim'
-    dest: "{{ lookup('env', 'HOME') }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
-  tags:
-    - arch-install
-    - ubuntu-install
