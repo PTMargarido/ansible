@@ -1,0 +1,5 @@
+- name: Running chezmoi
+  shell: "chezmoi init --apply --verbose git@github.com:PTMargarido/dotfiles.git --force"
+  tags:
+    - arch-install
+    - ubuntu-install

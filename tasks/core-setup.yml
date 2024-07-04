@@ -27,6 +27,7 @@
           stow \
           fzf \
           alacritty \
+          chezmoi \
           zsh \
           starship \
           ttf-fira-code \
