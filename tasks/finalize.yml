@@ -4,3 +4,9 @@
   tags:
     - ubuntu-install
     - arch-install
+
+- name: Installing tmux harpoon
+  shell: "cd ~/.tmux-harpoon && sudo make install"
+  tags:
+    - ubuntu-install
+    - arch-install

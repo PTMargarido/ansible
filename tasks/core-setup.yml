@@ -28,6 +28,8 @@
           fzf \
           alacritty \
           chezmoi \
+          zoxide \
+          exa \
           zsh \
           starship \
           ttf-fira-code \
