@@ -30,6 +30,7 @@
           chezmoi \
           zoxide \
           exa \
+          bat \
           zsh \
           starship \
           ttf-fira-code \
