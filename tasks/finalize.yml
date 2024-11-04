@@ -10,3 +10,15 @@
   tags:
     - ubuntu-install
     - arch-install
+
+- name: Installing all packages
+  shell: "yay -Sy --needed --noconfirm --sudoloop - < ~/.pacman"
+  tags:
+    - ubuntu-install
+    - arch-install
+
+- name: Installing all packages aur
+  shell: "yay -Sy --needed --noconfirm --sudoloop - < ~/.pacman.aur"
+  tags:
+    - ubuntu-install
+    - arch-install
